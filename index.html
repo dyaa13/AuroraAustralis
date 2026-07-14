@@ -1,0 +1,1518 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Aurora Australis 新西兰南岛定制旅行：经典路线、家庭旅行、摄影旅行、自驾与包车行程规划。" />
+  <title>Aurora Australis｜新西兰南岛定制旅行</title>
+  <style>
+    :root {
+      --ink: #0b1c2c;
+      --muted: #607384;
+      --paper: #f5f8f8;
+      --white: #ffffff;
+      --navy: #071722;
+      --navy-2: #0a2634;
+      --teal: #1ac6a8;
+      --teal-dark: #0f907c;
+      --sky: #7ed7e7;
+      --gold: #e9bd6a;
+      --line: #dce8e8;
+      --danger: #b94f4f;
+      --shadow: 0 20px 50px rgba(4, 31, 45, 0.12);
+      --radius: 22px;
+      --container: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Inter, "Noto Sans SC", "Microsoft YaHei", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+    button, input, select, textarea { font: inherit; }
+    a { color: inherit; text-decoration: none; }
+    img, svg { max-width: 100%; display: block; }
+    section { scroll-margin-top: 86px; }
+
+    .container {
+      width: min(calc(100% - 36px), var(--container));
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 14px;
+      color: var(--teal-dark);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 2px;
+      background: currentColor;
+      border-radius: 999px;
+    }
+
+    .section-heading {
+      max-width: 720px;
+      margin-bottom: 34px;
+    }
+    .section-heading h2 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      line-height: 1.12;
+      letter-spacing: -0.04em;
+    }
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 50;
+      height: 76px;
+      color: white;
+      background: rgba(5, 20, 30, 0.76);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(16px);
+    }
+    .nav-wrap {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: max-content;
+    }
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 65% 30%, rgba(255,255,255,.75), transparent 13%),
+        linear-gradient(135deg, #1fe7c2 0%, #59bfe9 45%, #8d6fe8 100%);
+      box-shadow: 0 0 28px rgba(46, 230, 196, .28);
+    }
+    .brand-mark::before,
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      left: -8px;
+      width: 58px;
+      height: 20px;
+      border-radius: 50%;
+      border-top: 3px solid rgba(255,255,255,.85);
+      transform: rotate(-14deg);
+    }
+    .brand-mark::before { top: 15px; }
+    .brand-mark::after { top: 23px; opacity: .55; }
+    .brand-copy strong {
+      display: block;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.12rem;
+      line-height: 1.1;
+      letter-spacing: .02em;
+    }
+    .brand-copy span {
+      display: block;
+      color: rgba(255,255,255,.68);
+      font-size: .66rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: .92rem;
+      font-weight: 650;
+    }
+    .nav-links a { color: rgba(255,255,255,.8); transition: .2s ease; }
+    .nav-links a:hover { color: white; }
+    .nav-actions { display: flex; align-items: center; gap: 10px; }
+    .lang-btn, .menu-btn {
+      border: 1px solid rgba(255,255,255,.22);
+      color: white;
+      background: rgba(255,255,255,.08);
+      border-radius: 12px;
+      cursor: pointer;
+    }
+    .lang-btn { padding: 8px 12px; font-weight: 750; }
+    .menu-btn {
+      display: none;
+      width: 42px;
+      height: 42px;
+      font-size: 1.3rem;
+    }
+
+    .hero {
+      min-height: 770px;
+      color: white;
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      align-items: center;
+      background:
+        radial-gradient(circle at 72% 18%, rgba(63, 230, 204, .17), transparent 24%),
+        radial-gradient(circle at 88% 34%, rgba(112, 110, 237, .17), transparent 25%),
+        linear-gradient(145deg, #04121c 0%, #092b39 52%, #0a2533 100%);
+    }
+    .aurora-ribbon {
+      position: absolute;
+      inset: -12% -20% auto 20%;
+      height: 440px;
+      transform: rotate(-8deg);
+      opacity: .58;
+      filter: blur(10px);
+      background:
+        radial-gradient(ellipse at center, rgba(64,255,195,.34) 0%, rgba(69,185,236,.18) 32%, rgba(151,82,222,.08) 53%, transparent 72%);
+      pointer-events: none;
+    }
+    .stars {
+      position: absolute;
+      inset: 0;
+      opacity: .42;
+      background-image:
+        radial-gradient(circle, rgba(255,255,255,.9) 0 1px, transparent 1.7px),
+        radial-gradient(circle, rgba(255,255,255,.65) 0 1px, transparent 1.4px);
+      background-position: 0 0, 28px 22px;
+      background-size: 72px 72px, 96px 96px;
+      mask-image: linear-gradient(to bottom, black 0%, transparent 76%);
+    }
+    .hero-mountains {
+      position: absolute;
+      inset: auto 0 0;
+      height: 39%;
+      pointer-events: none;
+    }
+    .hero-mountains svg { width: 100%; height: 100%; }
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      padding-top: 118px;
+      padding-bottom: 155px;
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 70px;
+      align-items: center;
+    }
+    .hero-copy h1 {
+      margin: 0 0 22px;
+      max-width: 750px;
+      font-size: clamp(3.3rem, 7.5vw, 6.7rem);
+      line-height: .96;
+      letter-spacing: -.062em;
+    }
+    .hero-copy h1 span {
+      display: block;
+      color: transparent;
+      background: linear-gradient(90deg, #f7fffc 0%, #78e9d5 55%, #8ed6f4 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+    .hero-copy p {
+      max-width: 650px;
+      margin: 0 0 30px;
+      color: rgba(255,255,255,.77);
+      font-size: 1.12rem;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 50px;
+      padding: 0 21px;
+      border: 1px solid transparent;
+      border-radius: 14px;
+      cursor: pointer;
+      font-weight: 800;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary {
+      color: #042018;
+      background: linear-gradient(135deg, #70f1d4, #9fe6f2);
+      box-shadow: 0 12px 30px rgba(34, 227, 187, .18);
+    }
+    .btn-secondary {
+      color: white;
+      border-color: rgba(255,255,255,.22);
+      background: rgba(255,255,255,.08);
+    }
+    .btn-dark { color: white; background: var(--ink); }
+    .btn-outline { border-color: var(--line); background: white; color: var(--ink); }
+
+    .hero-panel {
+      padding: 26px;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 28px;
+      background: linear-gradient(145deg, rgba(255,255,255,.10), rgba(255,255,255,.045));
+      box-shadow: 0 28px 90px rgba(0,0,0,.28);
+      backdrop-filter: blur(12px);
+    }
+    .hero-panel-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      margin-bottom: 18px;
+    }
+    .hero-panel-top strong { font-size: 1.05rem; }
+    .live-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: #baf7e8;
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .live-pill::before {
+      content: "";
+      width: 8px; height: 8px; border-radius: 50%;
+      background: #4ce7bf;
+      box-shadow: 0 0 0 6px rgba(76,231,191,.12);
+    }
+    .preview-map {
+      min-height: 330px;
+      padding: 10px;
+      border-radius: 20px;
+      overflow: hidden;
+      background: rgba(2,15,22,.42);
+    }
+    .preview-footer {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .preview-stat {
+      flex: 1;
+      padding: 14px 14px 12px;
+      border-radius: 15px;
+      background: rgba(255,255,255,.075);
+    }
+    .preview-stat b { display: block; font-size: 1.15rem; }
+    .preview-stat span { color: rgba(255,255,255,.58); font-size: .74rem; }
+
+    .trust-strip {
+      position: relative;
+      z-index: 3;
+      margin-top: -62px;
+    }
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border: 1px solid rgba(12,55,69,.08);
+      border-radius: 22px;
+      overflow: hidden;
+      background: white;
+      box-shadow: var(--shadow);
+    }
+    .trust-item {
+      min-height: 124px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 24px;
+      border-right: 1px solid var(--line);
+    }
+    .trust-item:last-child { border-right: 0; }
+    .trust-icon {
+      flex: 0 0 auto;
+      width: 48px; height: 48px;
+      display: grid; place-items: center;
+      border-radius: 15px;
+      color: var(--teal-dark);
+      background: #e9faf6;
+      font-size: 1.35rem;
+    }
+    .trust-item strong { display: block; font-size: .96rem; }
+    .trust-item span { display: block; color: var(--muted); font-size: .78rem; margin-top: 2px; }
+
+    .routes-section { padding: 118px 0 104px; }
+    .routes-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 35px;
+    }
+    .routes-head .section-heading { margin-bottom: 0; }
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 9px;
+    }
+    .filter-btn {
+      padding: 9px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      background: white;
+      cursor: pointer;
+      font-size: .83rem;
+      font-weight: 800;
+    }
+    .filter-btn.active {
+      color: white;
+      border-color: var(--ink);
+      background: var(--ink);
+    }
+
+    .route-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .route-card {
+      min-width: 0;
+      overflow: hidden;
+      border: 1px solid rgba(9, 46, 60, .09);
+      border-radius: var(--radius);
+      background: white;
+      box-shadow: 0 16px 40px rgba(7, 38, 50, .075);
+      transition: transform .22s ease, box-shadow .22s ease;
+    }
+    .route-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 25px 55px rgba(7, 38, 50, .13);
+    }
+    .route-map {
+      height: 286px;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 75% 15%, rgba(255,255,255,.5), transparent 20%),
+        linear-gradient(145deg, #dff7f2 0%, #d7eef2 55%, #e8e0f7 100%);
+    }
+    .route-map .map-label {
+      position: absolute;
+      left: 20px;
+      top: 18px;
+      z-index: 3;
+      padding: 7px 11px;
+      border-radius: 999px;
+      color: #0a4d43;
+      background: rgba(255,255,255,.78);
+      backdrop-filter: blur(6px);
+      font-size: .74rem;
+      font-weight: 850;
+    }
+    .route-map svg { width: 100%; height: 100%; }
+    .route-body { padding: 25px; }
+    .route-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 13px;
+    }
+    .tag {
+      display: inline-flex;
+      padding: 6px 9px;
+      border-radius: 8px;
+      color: #17695d;
+      background: #eaf9f6;
+      font-size: .72rem;
+      font-weight: 850;
+    }
+    .tag.gold { color: #765215; background: #fff5dc; }
+    .route-body h3 {
+      margin: 0 0 8px;
+      font-size: 1.44rem;
+      line-height: 1.25;
+      letter-spacing: -.02em;
+    }
+    .route-body p { margin: 0 0 17px; color: var(--muted); font-size: .92rem; }
+    .route-stops {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 7px;
+      min-height: 47px;
+      margin-bottom: 20px;
+      color: #324c5a;
+      font-size: .78rem;
+      font-weight: 700;
+    }
+    .route-stops i {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--teal);
+    }
+    .route-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--teal-dark);
+      font-size: .86rem;
+      font-weight: 850;
+    }
+
+    .why-section {
+      padding: 110px 0;
+      color: white;
+      background: var(--navy);
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 68px;
+      align-items: center;
+    }
+    .why-section .eyebrow { color: #77e4cf; }
+    .why-section .section-heading p { color: rgba(255,255,255,.64); }
+    .feature-list { display: grid; gap: 14px; }
+    .feature {
+      padding: 22px;
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 15px;
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 18px;
+      background: rgba(255,255,255,.045);
+    }
+    .feature .num {
+      width: 48px; height: 48px;
+      display: grid; place-items: center;
+      border-radius: 14px;
+      color: #02271f;
+      background: linear-gradient(135deg, #63e6c8, #9bdff0);
+      font-size: .83rem;
+      font-weight: 900;
+    }
+    .feature h3 { margin: 0 0 4px; font-size: 1rem; }
+    .feature p { margin: 0; color: rgba(255,255,255,.6); font-size: .84rem; }
+
+    .process-visual {
+      position: relative;
+      min-height: 500px;
+      padding: 32px;
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at 70% 20%, rgba(89, 226, 199, .15), transparent 28%),
+        linear-gradient(145deg, #0b2735, #071923);
+      overflow: hidden;
+    }
+    .process-visual::before {
+      content: "";
+      position: absolute;
+      width: 310px; height: 310px;
+      right: -80px; top: -90px;
+      border-radius: 50%;
+      border: 1px solid rgba(126,224,206,.22);
+      box-shadow: 0 0 0 42px rgba(126,224,206,.035), 0 0 0 90px rgba(126,224,206,.025);
+    }
+    .quote-card {
+      position: relative;
+      z-index: 2;
+      max-width: 390px;
+      padding: 25px;
+      border-radius: 20px;
+      background: white;
+      color: var(--ink);
+      box-shadow: 0 20px 55px rgba(0,0,0,.22);
+    }
+    .quote-card small {
+      display: block;
+      color: var(--teal-dark);
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      margin-bottom: 10px;
+    }
+    .quote-card h3 { margin: 0 0 10px; font-size: 1.55rem; line-height: 1.25; }
+    .quote-card p { margin: 0; color: var(--muted); font-size: .9rem; }
+    .mini-itinerary {
+      position: absolute;
+      z-index: 3;
+      right: 28px;
+      bottom: 28px;
+      width: min(370px, 72%);
+      padding: 20px;
+      border-radius: 19px;
+      background: rgba(255,255,255,.09);
+      border: 1px solid rgba(255,255,255,.14);
+      backdrop-filter: blur(12px);
+    }
+    .mini-day {
+      display: grid;
+      grid-template-columns: 62px 1fr;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,.09);
+    }
+    .mini-day:last-child { border-bottom: 0; }
+    .mini-day b { color: #7fe9d3; font-size: .78rem; }
+    .mini-day span { color: rgba(255,255,255,.78); font-size: .82rem; }
+
+    .styles-section { padding: 110px 0; }
+    .style-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+    .style-card {
+      min-height: 245px;
+      padding: 23px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+      overflow: hidden;
+      border-radius: 21px;
+      color: white;
+      background: var(--navy-2);
+    }
+    .style-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: .9;
+      background:
+        radial-gradient(circle at 75% 18%, var(--glow, rgba(55,222,191,.5)), transparent 30%),
+        linear-gradient(to top, rgba(2,17,24,.94), rgba(7,43,55,.32));
+    }
+    .style-card::after {
+      content: "";
+      position: absolute;
+      left: -10%; right: -10%; bottom: -30px;
+      height: 120px;
+      background: rgba(255,255,255,.08);
+      clip-path: polygon(0 80%, 16% 36%, 31% 62%, 49% 20%, 67% 60%, 82% 31%, 100% 72%, 100% 100%, 0 100%);
+    }
+    .style-card > * { position: relative; z-index: 2; }
+    .style-icon {
+      width: 44px; height: 44px;
+      display: grid; place-items: center;
+      margin-bottom: auto;
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 14px;
+      background: rgba(255,255,255,.08);
+      font-size: 1.2rem;
+    }
+    .style-card h3 { margin: 0 0 7px; font-size: 1.15rem; }
+    .style-card p { margin: 0; color: rgba(255,255,255,.67); font-size: .82rem; }
+
+    .faq-section { padding: 100px 0; background: #edf3f3; }
+    .faq-grid {
+      display: grid;
+      grid-template-columns: .75fr 1.25fr;
+      gap: 70px;
+    }
+    .faq-list { display: grid; gap: 12px; }
+    details {
+      overflow: hidden;
+      border: 1px solid rgba(14,61,76,.1);
+      border-radius: 16px;
+      background: white;
+    }
+    summary {
+      list-style: none;
+      padding: 19px 52px 19px 20px;
+      position: relative;
+      cursor: pointer;
+      font-weight: 800;
+      font-size: .93rem;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: "+";
+      position: absolute;
+      right: 20px; top: 50%;
+      transform: translateY(-50%);
+      color: var(--teal-dark);
+      font-size: 1.3rem;
+    }
+    details[open] summary::after { content: "−"; }
+    details p { margin: 0; padding: 0 20px 19px; color: var(--muted); font-size: .87rem; }
+
+    .contact-section { padding: 110px 0; }
+    .contact-shell {
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: .82fr 1.18fr;
+      border-radius: 28px;
+      background: white;
+      box-shadow: var(--shadow);
+    }
+    .contact-copy {
+      padding: 46px;
+      color: white;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 83% 18%, rgba(86,235,204,.19), transparent 28%),
+        linear-gradient(150deg, #061924, #0b3341);
+    }
+    .contact-copy::after {
+      content: "";
+      position: absolute;
+      inset: auto -10% -18% -10%;
+      height: 230px;
+      background: rgba(255,255,255,.06);
+      clip-path: polygon(0 75%, 17% 35%, 35% 63%, 50% 22%, 68% 66%, 84% 40%, 100% 72%, 100% 100%, 0 100%);
+    }
+    .contact-copy > * { position: relative; z-index: 2; }
+    .contact-copy h2 { margin: 0 0 15px; font-size: 2.35rem; line-height: 1.12; }
+    .contact-copy p { margin: 0 0 28px; color: rgba(255,255,255,.66); }
+    .contact-fact {
+      display: flex;
+      gap: 13px;
+      margin: 15px 0;
+      color: rgba(255,255,255,.8);
+      font-size: .9rem;
+    }
+    .contact-fact b { color: #7fe9d3; min-width: 74px; }
+    .contact-form { padding: 42px; }
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .field { display: grid; gap: 7px; }
+    .field.full { grid-column: 1 / -1; }
+    .field label { font-size: .78rem; font-weight: 850; }
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      border: 1px solid #d7e3e5;
+      border-radius: 12px;
+      outline: none;
+      background: #fbfdfd;
+      padding: 12px 13px;
+      transition: border .2s ease, box-shadow .2s ease;
+    }
+    .field textarea { min-height: 118px; resize: vertical; }
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--teal);
+      box-shadow: 0 0 0 4px rgba(26,198,168,.1);
+    }
+    .form-foot {
+      margin-top: 19px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+    .form-note { color: var(--muted); font-size: .72rem; }
+    .form-status { margin-top: 12px; color: var(--teal-dark); font-size: .82rem; font-weight: 750; }
+
+    footer {
+      padding: 40px 0;
+      color: rgba(255,255,255,.67);
+      background: #031019;
+      font-size: .78rem;
+    }
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+    }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 18px; }
+    footer strong { color: white; }
+
+    .hidden { display: none !important; }
+
+    @media (max-width: 980px) {
+      .nav-links {
+        position: fixed;
+        left: 18px; right: 18px; top: 86px;
+        display: none;
+        padding: 18px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+        border-radius: 18px;
+        background: #092431;
+        box-shadow: 0 20px 55px rgba(0,0,0,.32);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 10px 12px; }
+      .menu-btn { display: inline-grid; place-items: center; }
+      .hero-grid { grid-template-columns: 1fr; gap: 35px; }
+      .hero-panel { max-width: 650px; }
+      .trust-grid { grid-template-columns: repeat(2, 1fr); }
+      .trust-item:nth-child(2) { border-right: 0; }
+      .trust-item:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+      .routes-head { align-items: flex-start; flex-direction: column; }
+      .filters { justify-content: flex-start; }
+      .why-grid, .faq-grid { grid-template-columns: 1fr; }
+      .style-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact-shell { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 680px) {
+      .container { width: min(calc(100% - 24px), var(--container)); }
+      .site-header { height: 68px; }
+      .brand-copy span { display: none; }
+      .brand-mark { width: 38px; height: 38px; }
+      .hero { min-height: auto; }
+      .hero-grid { padding-top: 118px; padding-bottom: 115px; }
+      .hero-copy h1 { font-size: clamp(3rem, 16vw, 4.5rem); }
+      .hero-panel { padding: 17px; }
+      .preview-map { min-height: 275px; }
+      .preview-footer { flex-wrap: wrap; }
+      .preview-stat { flex-basis: calc(50% - 7px); }
+      .trust-strip { margin-top: -42px; }
+      .trust-grid { grid-template-columns: 1fr; }
+      .trust-item { border-right: 0; border-bottom: 1px solid var(--line) !important; }
+      .trust-item:last-child { border-bottom: 0 !important; }
+      .routes-section, .styles-section, .why-section, .faq-section, .contact-section { padding: 82px 0; }
+      .route-grid { grid-template-columns: 1fr; }
+      .route-map { height: 260px; }
+      .process-visual { min-height: 560px; padding: 22px; }
+      .mini-itinerary { width: calc(100% - 42px); left: 21px; right: auto; }
+      .style-grid { grid-template-columns: 1fr; }
+      .faq-grid { gap: 30px; }
+      .contact-copy, .contact-form { padding: 28px 22px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .field.full { grid-column: auto; }
+      .form-foot { align-items: stretch; flex-direction: column; }
+      .form-foot .btn { width: 100%; }
+      .footer-grid { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home" aria-label="Aurora Australis 首页">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-copy">
+          <strong>Aurora Australis</strong>
+          <span data-i18n="brandSub">South Island Journeys</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" data-i18n="navHome">首页</a>
+        <a href="#routes" data-i18n="navRoutes">经典路线</a>
+        <a href="#custom" data-i18n="navCustom">定制方式</a>
+        <a href="#styles" data-i18n="navStyles">旅行主题</a>
+        <a href="#contact" data-i18n="navContact">联系我们</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="lang-btn" id="langBtn" type="button" aria-label="切换语言">EN</button>
+        <button class="menu-btn" id="menuBtn" type="button" aria-label="打开菜单">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="aurora-ribbon"></div>
+      <div class="stars"></div>
+
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow" style="color:#78e9d5" data-i18n="heroEyebrow">新西兰南岛 · 私人定制</div>
+          <h1>
+            <span data-i18n="heroLine1">把南岛，</span>
+            <span data-i18n="heroLine2">走成你的故事。</span>
+          </h1>
+          <p data-i18n="heroText">
+            从雪山、冰川、星空到峡湾，我们根据你的时间、兴趣、预算和同行成员，
+            设计真正适合你的新西兰南岛行程。
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact"><span data-i18n="heroCta1">开始定制行程</span> <span>→</span></a>
+            <a class="btn btn-secondary" href="#routes"><span data-i18n="heroCta2">查看经典路线</span></a>
+          </div>
+        </div>
+
+        <aside class="hero-panel" aria-label="南岛路线预览">
+          <div class="hero-panel-top">
+            <strong data-i18n="mapTitle">南岛经典环线</strong>
+            <span class="live-pill" data-i18n="mapPill">可定制</span>
+          </div>
+          <div class="preview-map">
+            <svg viewBox="0 0 460 350" role="img" aria-label="新西兰南岛经典路线示意图">
+              <defs>
+                <linearGradient id="islandHero" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#d8f7ed" stop-opacity=".93"/>
+                  <stop offset="100%" stop-color="#b9dfe9" stop-opacity=".7"/>
+                </linearGradient>
+                <filter id="heroGlow">
+                  <feGaussianBlur stdDeviation="4" result="blur"/>
+                  <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+              </defs>
+              <path d="M270 22 C294 33 307 49 309 68 C312 87 331 101 336 122 C341 143 326 158 333 178 C342 201 320 221 304 234 C283 253 278 274 254 293 C236 307 213 320 189 328 C176 332 166 323 173 311 C183 294 194 277 190 258 C187 241 166 231 171 211 C176 192 192 180 193 160 C195 139 179 123 190 104 C203 82 224 73 235 51 C243 35 249 20 270 22 Z"
+                    fill="url(#islandHero)" stroke="rgba(255,255,255,.62)" stroke-width="2"/>
+              <path d="M190 105 C218 125 234 144 236 168 C238 190 222 205 229 226 C238 252 263 264 274 288"
+                    fill="none" stroke="#70f1d4" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" filter="url(#heroGlow)"/>
+              <path d="M190 105 C175 139 165 173 174 211 C182 248 207 279 274 288"
+                    fill="none" stroke="#8fd8f2" stroke-width="3" stroke-dasharray="7 8" stroke-linecap="round" opacity=".8"/>
+              <g font-family="Inter, sans-serif" font-size="11" fill="#fff">
+                <g transform="translate(190 105)">
+                  <circle r="7" fill="#f4d080" stroke="#fff" stroke-width="2"/>
+                  <text x="-79" y="-8">Christchurch</text>
+                </g>
+                <g transform="translate(222 145)">
+                  <circle r="6" fill="#70f1d4" stroke="#fff" stroke-width="2"/>
+                  <text x="12" y="-3">Lake Tekapo</text>
+                </g>
+                <g transform="translate(236 168)">
+                  <circle r="6" fill="#70f1d4" stroke="#fff" stroke-width="2"/>
+                  <text x="12" y="4">Aoraki / Mt Cook</text>
+                </g>
+                <g transform="translate(229 226)">
+                  <circle r="6" fill="#70f1d4" stroke="#fff" stroke-width="2"/>
+                  <text x="-67" y="5">Wānaka</text>
+                </g>
+                <g transform="translate(274 288)">
+                  <circle r="7" fill="#f4d080" stroke="#fff" stroke-width="2"/>
+                  <text x="13" y="4">Queenstown</text>
+                </g>
+                <g transform="translate(178 242)">
+                  <circle r="5" fill="#8fd8f2" stroke="#fff" stroke-width="2"/>
+                  <text x="-78" y="5">West Coast</text>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <div class="preview-footer">
+            <div class="preview-stat"><b>5–14</b><span data-i18n="statDays">推荐天数</span></div>
+            <div class="preview-stat"><b>1:1</b><span data-i18n="statPlan">专属规划</span></div>
+            <div class="preview-stat"><b>中文</b><span data-i18n="statLang">沟通支持</span></div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="hero-mountains" aria-hidden="true">
+        <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+          <path d="M0 240 L135 155 L225 210 L360 95 L465 205 L615 118 L715 224 L890 105 L1030 218 L1175 86 L1305 205 L1440 150 L1440 320 L0 320 Z" fill="#071a25" opacity=".72"/>
+          <path d="M0 278 L185 207 L320 260 L510 175 L660 255 L825 188 L985 270 L1160 180 L1290 240 L1440 205 L1440 320 L0 320 Z" fill="#06141d"/>
+        </svg>
+      </div>
+    </section>
+
+    <div class="trust-strip">
+      <div class="container trust-grid">
+        <div class="trust-item">
+          <span class="trust-icon">⌖</span>
+          <div><strong data-i18n="trust1Title">南岛本地视角</strong><span data-i18n="trust1Text">路线更合理，体验更深入</span></div>
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon">✦</span>
+          <div><strong data-i18n="trust2Title">一对一定制</strong><span data-i18n="trust2Text">不是复制粘贴的旅行团</span></div>
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon">中</span>
+          <div><strong data-i18n="trust3Title">中文沟通</strong><span data-i18n="trust3Text">行前、行中信息更清晰</span></div>
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon">⌁</span>
+          <div><strong data-i18n="trust4Title">灵活旅行方式</strong><span data-i18n="trust4Text">自驾、包车、家庭、小团</span></div>
+        </div>
+      </div>
+    </div>
+
+    <section class="routes-section" id="routes">
+      <div class="container">
+        <div class="routes-head">
+          <div class="section-heading">
+            <div class="eyebrow" data-i18n="routesEyebrow">Classic journeys</div>
+            <h2 data-i18n="routesTitle">从经典路线开始，再为你重新设计</h2>
+            <p data-i18n="routesText">以下线路是灵感模板。住宿等级、每日车程、活动强度、亲子节奏和季节安排都可以调整。</p>
+          </div>
+          <div class="filters" aria-label="筛选路线">
+            <button class="filter-btn active" data-filter="all" data-i18n="filterAll">全部</button>
+            <button class="filter-btn" data-filter="short" data-i18n="filterShort">5–7天</button>
+            <button class="filter-btn" data-filter="medium" data-i18n="filterMedium">8–10天</button>
+            <button class="filter-btn" data-filter="long" data-i18n="filterLong">11天以上</button>
+          </div>
+        </div>
+
+        <div class="route-grid">
+          <!-- Route 1 -->
+          <article class="route-card" data-duration="short">
+            <div class="route-map">
+              <span class="map-label" data-i18n="routeMap">路线示意图</span>
+              <svg viewBox="0 0 520 286" role="img" aria-label="基督城至皇后镇高山湖泊路线">
+                <path d="M302 20 C338 37 330 66 349 84 C368 103 353 128 369 150 C386 174 352 197 342 221 C334 240 302 267 268 277 C247 283 232 268 242 248 C255 222 229 207 239 181 C248 159 268 143 264 119 C259 91 280 74 286 48 C290 30 287 20 302 20 Z"
+                      fill="#c3e9e4" stroke="#fff" stroke-width="3"/>
+                <polyline points="252,103 277,133 290,159 316,219 329,247" fill="none" stroke="#0ea98e" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                <g font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#123946">
+                  <circle cx="252" cy="103" r="7" fill="#f0bd60"/><text x="143" y="99">Christchurch</text>
+                  <circle cx="277" cy="133" r="6" fill="#0ea98e"/><text x="287" y="132">Lake Tekapo</text>
+                  <circle cx="290" cy="159" r="6" fill="#0ea98e"/><text x="300" y="160">Aoraki / Mt Cook</text>
+                  <circle cx="316" cy="219" r="6" fill="#0ea98e"/><text x="235" y="218">Wānaka</text>
+                  <circle cx="329" cy="247" r="7" fill="#f0bd60"/><text x="340" y="252">Queenstown</text>
+                </g>
+              </svg>
+            </div>
+            <div class="route-body">
+              <div class="route-meta">
+                <span class="tag" data-i18n="r1Tag1">5天4晚</span>
+                <span class="tag gold" data-i18n="r1Tag2">首次南岛</span>
+              </div>
+              <h3 data-i18n="r1Title">高山湖泊精华线</h3>
+              <p data-i18n="r1Text">用较短时间串联基督城、蒂卡普、库克山、瓦纳卡和皇后镇，适合第一次到访南岛的客人。</p>
+              <div class="route-stops">
+                <span>Christchurch</span><i></i><span>Tekapo</span><i></i><span>Mt Cook</span><i></i><span>Wānaka</span><i></i><span>Queenstown</span>
+              </div>
+              <a class="route-link" href="#contact"><span data-i18n="routeCustom">按此路线定制</span> →</a>
+            </div>
+          </article>
+
+          <!-- Route 2 -->
+          <article class="route-card" data-duration="short">
+            <div class="route-map">
+              <span class="map-label" data-i18n="routeMap">路线示意图</span>
+              <svg viewBox="0 0 520 286" role="img" aria-label="峡湾与星空七日路线">
+                <path d="M302 20 C338 37 330 66 349 84 C368 103 353 128 369 150 C386 174 352 197 342 221 C334 240 302 267 268 277 C247 283 232 268 242 248 C255 222 229 207 239 181 C248 159 268 143 264 119 C259 91 280 74 286 48 C290 30 287 20 302 20 Z"
+                      fill="#c6e7ef" stroke="#fff" stroke-width="3"/>
+                <polyline points="252,103 277,133 290,159 316,219 329,247 288,258 251,233" fill="none" stroke="#497ccf" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                <g font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#123946">
+                  <circle cx="252" cy="103" r="7" fill="#f0bd60"/><text x="143" y="99">Christchurch</text>
+                  <circle cx="277" cy="133" r="6" fill="#497ccf"/><text x="287" y="132">Lake Tekapo</text>
+                  <circle cx="290" cy="159" r="6" fill="#497ccf"/><text x="300" y="160">Mt Cook</text>
+                  <circle cx="316" cy="219" r="6" fill="#497ccf"/><text x="326" y="218">Wānaka</text>
+                  <circle cx="329" cy="247" r="6" fill="#497ccf"/><text x="340" y="250">Queenstown</text>
+                  <circle cx="288" cy="258" r="6" fill="#497ccf"/><text x="282" y="278">Te Anau</text>
+                  <circle cx="251" cy="233" r="7" fill="#f0bd60"/><text x="135" y="236">Milford Sound</text>
+                </g>
+              </svg>
+            </div>
+            <div class="route-body">
+              <div class="route-meta">
+                <span class="tag" data-i18n="r2Tag1">7天6晚</span>
+                <span class="tag gold" data-i18n="r2Tag2">星空与峡湾</span>
+              </div>
+              <h3 data-i18n="r2Title">星空与米尔福德峡湾</h3>
+              <p data-i18n="r2Text">在高山湖泊线路上加入蒂阿瑙和米尔福德峡湾，适合希望兼顾观景、轻徒步与峡湾游船的客人。</p>
+              <div class="route-stops">
+                <span>Christchurch</span><i></i><span>Tekapo</span><i></i><span>Mt Cook</span><i></i><span>Queenstown</span><i></i><span>Te Anau</span><i></i><span>Milford</span>
+              </div>
+              <a class="route-link" href="#contact"><span data-i18n="routeCustom">按此路线定制</span> →</a>
+            </div>
+          </article>
+
+          <!-- Route 3 -->
+          <article class="route-card" data-duration="medium">
+            <div class="route-map">
+              <span class="map-label" data-i18n="routeMap">路线示意图</span>
+              <svg viewBox="0 0 520 286" role="img" aria-label="南岛西海岸十日环线">
+                <path d="M302 20 C338 37 330 66 349 84 C368 103 353 128 369 150 C386 174 352 197 342 221 C334 240 302 267 268 277 C247 283 232 268 242 248 C255 222 229 207 239 181 C248 159 268 143 264 119 C259 91 280 74 286 48 C290 30 287 20 302 20 Z"
+                      fill="#d6e9df" stroke="#fff" stroke-width="3"/>
+                <polyline points="252,103 226,117 218,155 221,197 249,226 316,219 329,247 290,159 277,133 252,103" fill="none" stroke="#9d6bc2" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                <g font-family="Inter, sans-serif" font-size="10.5" font-weight="700" fill="#123946">
+                  <circle cx="252" cy="103" r="7" fill="#f0bd60"/><text x="142" y="99">Christchurch</text>
+                  <circle cx="226" cy="117" r="6" fill="#9d6bc2"/><text x="117" y="119">Arthur's Pass</text>
+                  <circle cx="218" cy="155" r="6" fill="#9d6bc2"/><text x="139" y="153">Hokitika</text>
+                  <circle cx="221" cy="197" r="6" fill="#9d6bc2"/><text x="117" y="200">Franz Josef</text>
+                  <circle cx="249" cy="226" r="6" fill="#9d6bc2"/><text x="176" y="229">Haast</text>
+                  <circle cx="316" cy="219" r="6" fill="#9d6bc2"/><text x="327" y="216">Wānaka</text>
+                  <circle cx="329" cy="247" r="6" fill="#9d6bc2"/><text x="340" y="251">Queenstown</text>
+                  <circle cx="290" cy="159" r="6" fill="#9d6bc2"/><text x="301" y="163">Mt Cook</text>
+                  <circle cx="277" cy="133" r="6" fill="#9d6bc2"/><text x="287" y="130">Tekapo</text>
+                </g>
+              </svg>
+            </div>
+            <div class="route-body">
+              <div class="route-meta">
+                <span class="tag" data-i18n="r3Tag1">10天9晚</span>
+                <span class="tag gold" data-i18n="r3Tag2">西海岸环线</span>
+              </div>
+              <h3 data-i18n="r3Title">冰川与西海岸大环线</h3>
+              <p data-i18n="r3Text">穿越亚瑟通道，沿西海岸南下，经冰川、哈斯特、瓦纳卡与皇后镇，再从库克山和蒂卡普返回基督城。</p>
+              <div class="route-stops">
+                <span>Arthur's Pass</span><i></i><span>Hokitika</span><i></i><span>Franz Josef</span><i></i><span>Wānaka</span><i></i><span>Queenstown</span><i></i><span>Tekapo</span>
+              </div>
+              <a class="route-link" href="#contact"><span data-i18n="routeCustom">按此路线定制</span> →</a>
+            </div>
+          </article>
+
+          <!-- Route 4 -->
+          <article class="route-card" data-duration="long">
+            <div class="route-map">
+              <span class="map-label" data-i18n="routeMap">路线示意图</span>
+              <svg viewBox="0 0 520 286" role="img" aria-label="南岛十二日全景线路">
+                <path d="M302 20 C338 37 330 66 349 84 C368 103 353 128 369 150 C386 174 352 197 342 221 C334 240 302 267 268 277 C247 283 232 268 242 248 C255 222 229 207 239 181 C248 159 268 143 264 119 C259 91 280 74 286 48 C290 30 287 20 302 20 Z"
+                      fill="#eadfce" stroke="#fff" stroke-width="3"/>
+                <polyline points="252,103 283,76 304,52 275,37 242,61 218,116 213,159 221,197 249,226 316,219 329,247" fill="none" stroke="#d07f53" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                <g font-family="Inter, sans-serif" font-size="10.3" font-weight="700" fill="#123946">
+                  <circle cx="252" cy="103" r="7" fill="#f0bd60"/><text x="142" y="101">Christchurch</text>
+                  <circle cx="283" cy="76" r="6" fill="#d07f53"/><text x="294" y="79">Kaikōura</text>
+                  <circle cx="304" cy="52" r="6" fill="#d07f53"/><text x="315" y="54">Marlborough</text>
+                  <circle cx="275" cy="37" r="6" fill="#d07f53"/><text x="190" y="31">Nelson</text>
+                  <circle cx="242" cy="61" r="6" fill="#d07f53"/><text x="130" y="64">Abel Tasman</text>
+                  <circle cx="218" cy="116" r="6" fill="#d07f53"/><text x="129" y="114">Punakaiki</text>
+                  <circle cx="213" cy="159" r="6" fill="#d07f53"/><text x="113" y="162">Hokitika</text>
+                  <circle cx="221" cy="197" r="6" fill="#d07f53"/><text x="113" y="201">Franz Josef</text>
+                  <circle cx="249" cy="226" r="6" fill="#d07f53"/><text x="177" y="229">Haast</text>
+                  <circle cx="316" cy="219" r="6" fill="#d07f53"/><text x="327" y="219">Wānaka</text>
+                  <circle cx="329" cy="247" r="7" fill="#f0bd60"/><text x="340" y="251">Queenstown</text>
+                </g>
+              </svg>
+            </div>
+            <div class="route-body">
+              <div class="route-meta">
+                <span class="tag" data-i18n="r4Tag1">12–14天</span>
+                <span class="tag gold" data-i18n="r4Tag2">南岛全景</span>
+              </div>
+              <h3 data-i18n="r4Title">海岸、冰川与高山全景线</h3>
+              <p data-i18n="r4Text">从凯库拉、马尔堡和亚伯塔斯曼一路进入西海岸，再向南抵达瓦纳卡和皇后镇，适合时间充裕的深度旅行。</p>
+              <div class="route-stops">
+                <span>Kaikōura</span><i></i><span>Marlborough</span><i></i><span>Abel Tasman</span><i></i><span>West Coast</span><i></i><span>Wānaka</span><i></i><span>Queenstown</span>
+              </div>
+              <a class="route-link" href="#contact"><span data-i18n="routeCustom">按此路线定制</span> →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="why-section" id="custom">
+      <div class="container why-grid">
+        <div>
+          <div class="section-heading">
+            <div class="eyebrow" data-i18n="customEyebrow">How it works</div>
+            <h2 data-i18n="customTitle">不只是安排景点，而是设计整段旅行体验</h2>
+            <p data-i18n="customText">我们先了解你真正想要什么，再处理路线、住宿、交通、活动和节奏之间的关系。</p>
+          </div>
+          <div class="feature-list">
+            <div class="feature">
+              <span class="num">01</span>
+              <div><h3 data-i18n="step1Title">告诉我们你的旅行想法</h3><p data-i18n="step1Text">人数、日期、预算、兴趣、驾驶习惯与特殊需求。</p></div>
+            </div>
+            <div class="feature">
+              <span class="num">02</span>
+              <div><h3 data-i18n="step2Title">获得初步路线建议</h3><p data-i18n="step2Text">我们优化每日车程、停留时间和目的地顺序。</p></div>
+            </div>
+            <div class="feature">
+              <span class="num">03</span>
+              <div><h3 data-i18n="step3Title">确认住宿与活动组合</h3><p data-i18n="step3Text">根据偏好搭配酒店、公寓、特色住宿和体验项目。</p></div>
+            </div>
+            <div class="feature">
+              <span class="num">04</span>
+              <div><h3 data-i18n="step4Title">形成完整行程方案</h3><p data-i18n="step4Text">包括每日安排、路线重点、预订建议和出行提醒。</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="process-visual">
+          <div class="quote-card">
+            <small data-i18n="sampleLabel">Sample request</small>
+            <h3 data-i18n="sampleTitle">“一家四口，10天，不想每天开太久，希望看到星空、雪山和动物。”</h3>
+            <p data-i18n="sampleText">我们会将经典路线重新组合，增加亲子停留和休息时间，而不是简单塞入更多景点。</p>
+          </div>
+          <div class="mini-itinerary">
+            <div class="mini-day"><b>DAY 01</b><span data-i18n="day1">抵达基督城 · 轻松调整</span></div>
+            <div class="mini-day"><b>DAY 02</b><span data-i18n="day2">基督城 → 蒂卡普 · 星空</span></div>
+            <div class="mini-day"><b>DAY 03</b><span data-i18n="day3">库克山 · 亲子轻徒步</span></div>
+            <div class="mini-day"><b>DAY 04</b><span data-i18n="day4">瓦纳卡 · 湖边慢旅行</span></div>
+            <div class="mini-day"><b>DAY 05</b><span data-i18n="day5">皇后镇 · 自由活动</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="styles-section" id="styles">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow" data-i18n="stylesEyebrow">Travel your way</div>
+          <h2 data-i18n="stylesTitle">同一座南岛，可以有完全不同的旅行方式</h2>
+          <p data-i18n="stylesText">选择一个主题作为起点，我们会根据季节和同行成员进一步细化。</p>
+        </div>
+        <div class="style-grid">
+          <article class="style-card" style="--glow:rgba(75,226,198,.6)">
+            <span class="style-icon">☼</span>
+            <h3 data-i18n="style1Title">家庭亲子</h3>
+            <p data-i18n="style1Text">减少长途驾驶，增加农场、动物、缆车和轻松步道。</p>
+          </article>
+          <article class="style-card" style="--glow:rgba(132,120,238,.62)">
+            <span class="style-icon">◉</span>
+            <h3 data-i18n="style2Title">摄影与星空</h3>
+            <p data-i18n="style2Text">围绕日出、日落、暗夜星空和季节景观安排停留。</p>
+          </article>
+          <article class="style-card" style="--glow:rgba(238,179,93,.58)">
+            <span class="style-icon">♡</span>
+            <h3 data-i18n="style3Title">蜜月与纪念旅行</h3>
+            <p data-i18n="style3Text">特色住宿、湖景餐厅、酒庄、温泉与慢节奏体验。</p>
+          </article>
+          <article class="style-card" style="--glow:rgba(69,169,231,.62)">
+            <span class="style-icon">△</span>
+            <h3 data-i18n="style4Title">户外与冒险</h3>
+            <p data-i18n="style4Text">徒步、皮划艇、冰川体验、喷射快艇与高空项目。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <div class="container faq-grid">
+        <div class="section-heading">
+          <div class="eyebrow">FAQ</div>
+          <h2 data-i18n="faqTitle">开始计划前，你可能想知道</h2>
+          <p data-i18n="faqText">网站上的行程为参考模板，最终方案会根据实际旅行日期、道路、天气和供应情况调整。</p>
+        </div>
+        <div class="faq-list">
+          <details open>
+            <summary data-i18n="faq1Q">你们可以安排自驾，也可以安排包车吗？</summary>
+            <p data-i18n="faq1A">可以。我们可以按照自驾、私人包车或两者结合的方式规划路线，并根据驾驶经验控制每日车程。</p>
+          </details>
+          <details>
+            <summary data-i18n="faq2Q">经典路线可以删减或增加目的地吗？</summary>
+            <p data-i18n="faq2A">可以。所有路线都只是起点，可根据抵达城市、返程城市、旅行天数和兴趣重新组合。</p>
+          </details>
+          <details>
+            <summary data-i18n="faq3Q">带老人或孩子，路线会有什么不同？</summary>
+            <p data-i18n="faq3A">我们会减少频繁换酒店和过长车程，预留休息时间，并优先安排适合同行成员体力的活动。</p>
+          </details>
+          <details>
+            <summary data-i18n="faq4Q">冬季也可以游南岛吗？</summary>
+            <p data-i18n="faq4A">可以，但冬季路线需要更重视日照时间、道路结冰、雪链和山区天气，并准备替代方案。</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="container contact-shell">
+        <div class="contact-copy">
+          <div class="eyebrow" style="color:#7fe9d3" data-i18n="contactEyebrow">Start your journey</div>
+          <h2 data-i18n="contactTitle">告诉我们，你想看到怎样的南岛</h2>
+          <p data-i18n="contactText">填写基本信息后，网站会生成一封询价邮件。正式上线时可再接入邮箱表单、微信、WhatsApp 或客户管理系统。</p>
+          <div class="contact-fact"><b data-i18n="factReply">沟通方式</b><span data-i18n="factReplyText">中文 / English</span></div>
+          <div class="contact-fact"><b data-i18n="factService">服务类型</b><span data-i18n="factServiceText">自驾规划 · 私人包车 · 家庭小团</span></div>
+          <div class="contact-fact"><b data-i18n="factBase">目的地</b><span data-i18n="factBaseText">New Zealand South Island</span></div>
+        </div>
+
+        <form class="contact-form" id="tripForm">
+          <div class="form-grid">
+            <div class="field">
+              <label for="name" data-i18n="labelName">姓名 *</label>
+              <input id="name" name="name" required data-i18n-placeholder="phName" placeholder="您的姓名" />
+            </div>
+            <div class="field">
+              <label for="contactMethod" data-i18n="labelContact">联系方式 *</label>
+              <input id="contactMethod" name="contactMethod" required data-i18n-placeholder="phContact" placeholder="邮箱 / 微信 / 电话" />
+            </div>
+            <div class="field">
+              <label for="travelDate" data-i18n="labelDate">预计出发时间</label>
+              <input id="travelDate" name="travelDate" type="month" />
+            </div>
+            <div class="field">
+              <label for="days" data-i18n="labelDays">旅行天数</label>
+              <select id="days" name="days">
+                <option value="5-7" data-i18n="days1">5–7天</option>
+                <option value="8-10" data-i18n="days2">8–10天</option>
+                <option value="11-14" data-i18n="days3">11–14天</option>
+                <option value="15+" data-i18n="days4">15天以上</option>
+                <option value="unsure" data-i18n="days5">还不确定</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="people" data-i18n="labelPeople">出行人数</label>
+              <input id="people" name="people" data-i18n-placeholder="phPeople" placeholder="例如：2位成人 + 2位儿童" />
+            </div>
+            <div class="field">
+              <label for="travelStyle" data-i18n="labelStyle">旅行方式</label>
+              <select id="travelStyle" name="travelStyle">
+                <option value="self-drive" data-i18n="travelStyle1">自驾</option>
+                <option value="private-driver" data-i18n="travelStyle2">私人包车</option>
+                <option value="mixed" data-i18n="travelStyle3">自驾 + 包车结合</option>
+                <option value="unsure" data-i18n="travelStyle4">需要建议</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label for="message" data-i18n="labelMessage">最想体验什么？</label>
+              <textarea id="message" name="message" data-i18n-placeholder="phMessage" placeholder="例如：星空、库克山、米尔福德峡湾、亲子活动、摄影、特色住宿……"></textarea>
+            </div>
+          </div>
+          <div class="form-foot">
+            <span class="form-note" data-i18n="formNote">提交前请在代码底部将联系邮箱替换为您的正式公司邮箱。</span>
+            <button class="btn btn-dark" type="submit"><span data-i18n="submitBtn">生成行程咨询邮件</span> →</button>
+          </div>
+          <div class="form-status" id="formStatus" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <strong>Aurora Australis</strong><br />
+        <span data-i18n="footerTagline">Tailor-made South Island journeys</span>
+      </div>
+      <div class="footer-links">
+        <a href="#routes" data-i18n="footerRoutes">经典路线</a>
+        <a href="#custom" data-i18n="footerCustom">定制流程</a>
+        <a href="#contact" data-i18n="footerContact">行程咨询</a>
+      </div>
+      <div>© <span id="year"></span> Aurora Australis. <span data-i18n="footerRights">All rights reserved.</span></div>
+    </div>
+  </footer>
+
+  <script>
+    /*
+      上线前请修改：
+      1. CONTACT_EMAIL：公司的正式接收邮箱
+      2. 电话、微信、WhatsApp 等联系方式可加入 contact-copy 区域
+      3. 如接入 Formspree / Netlify Forms / 自建后端，可替换当前 mailto 提交方式
+    */
+    const CONTACT_EMAIL = "hello@auroraaustralis.co.nz";
+
+    const translations = {
+      zh: {
+        brandSub: "South Island Journeys",
+        navHome: "首页", navRoutes: "经典路线", navCustom: "定制方式", navStyles: "旅行主题", navContact: "联系我们",
+        heroEyebrow: "新西兰南岛 · 私人定制", heroLine1: "把南岛，", heroLine2: "走成你的故事。",
+        heroText: "从雪山、冰川、星空到峡湾，我们根据你的时间、兴趣、预算和同行成员，设计真正适合你的新西兰南岛行程。",
+        heroCta1: "开始定制行程", heroCta2: "查看经典路线",
+        mapTitle: "南岛经典环线", mapPill: "可定制", statDays: "推荐天数", statPlan: "专属规划", statLang: "沟通支持",
+        trust1Title: "南岛本地视角", trust1Text: "路线更合理，体验更深入",
+        trust2Title: "一对一定制", trust2Text: "不是复制粘贴的旅行团",
+        trust3Title: "中文沟通", trust3Text: "行前、行中信息更清晰",
+        trust4Title: "灵活旅行方式", trust4Text: "自驾、包车、家庭、小团",
+        routesEyebrow: "经典路线", routesTitle: "从经典路线开始，再为你重新设计",
+        routesText: "以下线路是灵感模板。住宿等级、每日车程、活动强度、亲子节奏和季节安排都可以调整。",
+        filterAll: "全部", filterShort: "5–7天", filterMedium: "8–10天", filterLong: "11天以上",
+        routeMap: "路线示意图", routeCustom: "按此路线定制",
+        r1Tag1: "5天4晚", r1Tag2: "首次南岛", r1Title: "高山湖泊精华线",
+        r1Text: "用较短时间串联基督城、蒂卡普、库克山、瓦纳卡和皇后镇，适合第一次到访南岛的客人。",
+        r2Tag1: "7天6晚", r2Tag2: "星空与峡湾", r2Title: "星空与米尔福德峡湾",
+        r2Text: "在高山湖泊线路上加入蒂阿瑙和米尔福德峡湾，适合希望兼顾观景、轻徒步与峡湾游船的客人。",
+        r3Tag1: "10天9晚", r3Tag2: "西海岸环线", r3Title: "冰川与西海岸大环线",
+        r3Text: "穿越亚瑟通道，沿西海岸南下，经冰川、哈斯特、瓦纳卡与皇后镇，再从库克山和蒂卡普返回基督城。",
+        r4Tag1: "12–14天", r4Tag2: "南岛全景", r4Title: "海岸、冰川与高山全景线",
+        r4Text: "从凯库拉、马尔堡和亚伯塔斯曼一路进入西海岸，再向南抵达瓦纳卡和皇后镇，适合时间充裕的深度旅行。",
+        customEyebrow: "定制流程", customTitle: "不只是安排景点，而是设计整段旅行体验",
+        customText: "我们先了解你真正想要什么，再处理路线、住宿、交通、活动和节奏之间的关系。",
+        step1Title: "告诉我们你的旅行想法", step1Text: "人数、日期、预算、兴趣、驾驶习惯与特殊需求。",
+        step2Title: "获得初步路线建议", step2Text: "我们优化每日车程、停留时间和目的地顺序。",
+        step3Title: "确认住宿与活动组合", step3Text: "根据偏好搭配酒店、公寓、特色住宿和体验项目。",
+        step4Title: "形成完整行程方案", step4Text: "包括每日安排、路线重点、预订建议和出行提醒。",
+        sampleLabel: "需求示例", sampleTitle: "“一家四口，10天，不想每天开太久，希望看到星空、雪山和动物。”",
+        sampleText: "我们会将经典路线重新组合，增加亲子停留和休息时间，而不是简单塞入更多景点。",
+        day1: "抵达基督城 · 轻松调整", day2: "基督城 → 蒂卡普 · 星空", day3: "库克山 · 亲子轻徒步", day4: "瓦纳卡 · 湖边慢旅行", day5: "皇后镇 · 自由活动",
+        stylesEyebrow: "旅行主题", stylesTitle: "同一座南岛，可以有完全不同的旅行方式",
+        stylesText: "选择一个主题作为起点，我们会根据季节和同行成员进一步细化。",
+        style1Title: "家庭亲子", style1Text: "减少长途驾驶，增加农场、动物、缆车和轻松步道。",
+        style2Title: "摄影与星空", style2Text: "围绕日出、日落、暗夜星空和季节景观安排停留。",
+        style3Title: "蜜月与纪念旅行", style3Text: "特色住宿、湖景餐厅、酒庄、温泉与慢节奏体验。",
+        style4Title: "户外与冒险", style4Text: "徒步、皮划艇、冰川体验、喷射快艇与高空项目。",
+        faqTitle: "开始计划前，你可能想知道", faqText: "网站上的行程为参考模板，最终方案会根据实际旅行日期、道路、天气和供应情况调整。",
+        faq1Q: "你们可以安排自驾，也可以安排包车吗？", faq1A: "可以。我们可以按照自驾、私人包车或两者结合的方式规划路线，并根据驾驶经验控制每日车程。",
+        faq2Q: "经典路线可以删减或增加目的地吗？", faq2A: "可以。所有路线都只是起点，可根据抵达城市、返程城市、旅行天数和兴趣重新组合。",
+        faq3Q: "带老人或孩子，路线会有什么不同？", faq3A: "我们会减少频繁换酒店和过长车程，预留休息时间，并优先安排适合同行成员体力的活动。",
+        faq4Q: "冬季也可以游南岛吗？", faq4A: "可以，但冬季路线需要更重视日照时间、道路结冰、雪链和山区天气，并准备替代方案。",
+        contactEyebrow: "开始你的旅程", contactTitle: "告诉我们，你想看到怎样的南岛",
+        contactText: "填写基本信息后，网站会生成一封询价邮件。正式上线时可再接入邮箱表单、微信、WhatsApp 或客户管理系统。",
+        factReply: "沟通方式", factReplyText: "中文 / English", factService: "服务类型", factServiceText: "自驾规划 · 私人包车 · 家庭小团",
+        factBase: "目的地", factBaseText: "新西兰南岛",
+        labelName: "姓名 *", labelContact: "联系方式 *", labelDate: "预计出发时间", labelDays: "旅行天数",
+        labelPeople: "出行人数", labelStyle: "旅行方式", labelMessage: "最想体验什么？",
+        phName: "您的姓名", phContact: "邮箱 / 微信 / 电话", phPeople: "例如：2位成人 + 2位儿童",
+        phMessage: "例如：星空、库克山、米尔福德峡湾、亲子活动、摄影、特色住宿……",
+        days1: "5–7天", days2: "8–10天", days3: "11–14天", days4: "15天以上", days5: "还不确定",
+        travelStyle1: "自驾", travelStyle2: "私人包车", travelStyle3: "自驾 + 包车结合", travelStyle4: "需要建议",
+        formNote: "提交前请在代码底部将联系邮箱替换为您的正式公司邮箱。", submitBtn: "生成行程咨询邮件",
+        formSuccess: "正在打开您的邮件程序。如未打开，请检查浏览器是否允许 mailto 链接。",
+        formError: "请先填写姓名和联系方式。",
+        footerTagline: "新西兰南岛私人定制旅行", footerRoutes: "经典路线", footerCustom: "定制流程", footerContact: "行程咨询", footerRights: "保留所有权利。"
+      },
+      en: {
+        brandSub: "South Island Journeys",
+        navHome: "Home", navRoutes: "Journeys", navCustom: "How It Works", navStyles: "Travel Styles", navContact: "Contact",
+        heroEyebrow: "New Zealand South Island · Tailor-made", heroLine1: "See the South.", heroLine2: "Make it your story.",
+        heroText: "From alpine lakes and glaciers to dark skies and fiords, we design a South Island journey around your time, interests, budget and travelling party.",
+        heroCta1: "Plan My Journey", heroCta2: "Explore Classic Routes",
+        mapTitle: "Classic South Island Loop", mapPill: "Customisable", statDays: "Suggested days", statPlan: "Personal planning", statLang: "Language support",
+        trust1Title: "Local South Island insight", trust1Text: "Smarter routes, deeper experiences",
+        trust2Title: "Truly tailor-made", trust2Text: "No copy-and-paste itineraries",
+        trust3Title: "Bilingual support", trust3Text: "Clear communication throughout",
+        trust4Title: "Flexible travel styles", trust4Text: "Self-drive, private touring, families",
+        routesEyebrow: "Classic journeys", routesTitle: "Start with a classic, then make it entirely yours",
+        routesText: "These journeys are inspiration templates. Accommodation, driving time, activity level, family pace and seasonal details can all be adjusted.",
+        filterAll: "All", filterShort: "5–7 days", filterMedium: "8–10 days", filterLong: "11+ days",
+        routeMap: "Route map", routeCustom: "Customise this journey",
+        r1Tag1: "5 days", r1Tag2: "First visit", r1Title: "Alpine Lakes Highlights",
+        r1Text: "Connect Christchurch, Lake Tekapo, Aoraki/Mount Cook, Wānaka and Queenstown in a compact first-time South Island journey.",
+        r2Tag1: "7 days", r2Tag2: "Stars & fiords", r2Title: "Dark Skies & Milford Sound",
+        r2Text: "Add Te Anau and Milford Sound to the alpine lakes route for a balanced mix of scenery, gentle walks and a fiord cruise.",
+        r3Tag1: "10 days", r3Tag2: "West Coast loop", r3Title: "Glaciers & West Coast Grand Loop",
+        r3Text: "Cross Arthur's Pass, follow the West Coast to glacier country, then travel via Haast, Wānaka and Queenstown before returning through the Mackenzie Country.",
+        r4Tag1: "12–14 days", r4Tag2: "Grand South Island", r4Title: "Coasts, Glaciers & Alpine Panorama",
+        r4Text: "Travel through Kaikōura, Marlborough and Abel Tasman before following the West Coast south to Wānaka and Queenstown.",
+        customEyebrow: "How it works", customTitle: "We do more than list attractions — we design the whole travel experience",
+        customText: "We begin with what matters to you, then balance route, accommodation, transport, activities and pace.",
+        step1Title: "Share your travel ideas", step1Text: "Party size, dates, budget, interests, driving confidence and special requirements.",
+        step2Title: "Receive an initial route concept", step2Text: "We refine daily driving, stop lengths and the order of destinations.",
+        step3Title: "Choose stays and experiences", step3Text: "Combine hotels, apartments, distinctive stays and activities to suit your style.",
+        step4Title: "Receive your complete journey plan", step4Text: "Daily schedule, route highlights, booking suggestions and practical travel notes.",
+        sampleLabel: "Sample request", sampleTitle: "“A family of four, ten days, not too much driving, with stars, mountains and wildlife.”",
+        sampleText: "We would reshape a classic route with more family time and rest, rather than simply adding more stops.",
+        day1: "Arrive Christchurch · Easy first day", day2: "Christchurch → Tekapo · Stargazing", day3: "Aoraki/Mt Cook · Family walk", day4: "Wānaka · Slow lakeside day", day5: "Queenstown · Free exploration",
+        stylesEyebrow: "Travel your way", stylesTitle: "One island, many completely different journeys",
+        stylesText: "Choose a theme as your starting point, then we refine it for the season and your travelling party.",
+        style1Title: "Family journeys", style1Text: "Less driving, more farms, wildlife, gondolas and easy walking trails.",
+        style2Title: "Photography & dark skies", style2Text: "Plan around sunrise, sunset, starry skies and seasonal landscapes.",
+        style3Title: "Honeymoons & celebrations", style3Text: "Distinctive stays, lake-view dining, wineries, hot pools and a slower pace.",
+        style4Title: "Outdoor & adventure", style4Text: "Hiking, kayaking, glacier experiences, jet boating and aerial adventures.",
+        faqTitle: "Before you begin planning", faqText: "Routes shown are reference templates. Final plans depend on travel dates, road and weather conditions, and availability.",
+        faq1Q: "Can you plan both self-drive and private-driver trips?", faq1A: "Yes. We can design a self-drive, private-driver or combined itinerary and adjust daily distances to your driving experience.",
+        faq2Q: "Can destinations be added or removed?", faq2A: "Yes. Every route is only a starting point and can be rebuilt around your arrival city, departure city, travel days and interests.",
+        faq3Q: "How do routes change for children or older travellers?", faq3A: "We reduce long driving days and frequent hotel changes, add rest time, and select activities appropriate to the group.",
+        faq4Q: "Can we travel in winter?", faq4A: "Yes, but winter planning needs extra attention to daylight, ice, snow chains, alpine weather and alternative plans.",
+        contactEyebrow: "Start your journey", contactTitle: "Tell us what your South Island should feel like",
+        contactText: "Complete the form to create an enquiry email. A live site can later connect to an email form, WeChat, WhatsApp or a customer management system.",
+        factReply: "Languages", factReplyText: "中文 / English", factService: "Services", factServiceText: "Self-drive · Private touring · Family groups",
+        factBase: "Destination", factBaseText: "New Zealand South Island",
+        labelName: "Name *", labelContact: "Contact details *", labelDate: "Expected travel date", labelDays: "Trip length",
+        labelPeople: "Travelling party", labelStyle: "Travel style", labelMessage: "What would you most like to experience?",
+        phName: "Your name", phContact: "Email / WeChat / phone", phPeople: "For example: 2 adults + 2 children",
+        phMessage: "For example: dark skies, Aoraki/Mt Cook, Milford Sound, family activities, photography, distinctive stays…",
+        days1: "5–7 days", days2: "8–10 days", days3: "11–14 days", days4: "15+ days", days5: "Not sure yet",
+        travelStyle1: "Self-drive", travelStyle2: "Private driver", travelStyle3: "Self-drive + private touring", travelStyle4: "I need advice",
+        formNote: "Before launch, replace the contact email near the bottom of the code with your official company email.", submitBtn: "Create Enquiry Email",
+        formSuccess: "Opening your email app. If nothing happens, check that your browser allows mailto links.",
+        formError: "Please enter your name and contact details.",
+        footerTagline: "Tailor-made South Island journeys", footerRoutes: "Classic journeys", footerCustom: "How it works", footerContact: "Enquire", footerRights: "All rights reserved."
+      }
+    };
+
+    let currentLang = "zh";
+
+    function applyLanguage(lang) {
+      currentLang = lang;
+      document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
+      document.title = lang === "zh"
+        ? "Aurora Australis｜新西兰南岛定制旅行"
+        : "Aurora Australis | Tailor-made South Island Journeys";
+
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.dataset.i18n;
+        if (translations[lang][key] !== undefined) el.textContent = translations[lang][key];
+      });
+
+      document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+        const key = el.dataset.i18nPlaceholder;
+        if (translations[lang][key] !== undefined) el.placeholder = translations[lang][key];
+      });
+
+      document.getElementById("langBtn").textContent = lang === "zh" ? "EN" : "中文";
+    }
+
+    document.getElementById("langBtn").addEventListener("click", () => {
+      applyLanguage(currentLang === "zh" ? "en" : "zh");
+    });
+
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+    menuBtn.addEventListener("click", () => navLinks.classList.toggle("open"));
+    navLinks.querySelectorAll("a").forEach(link => link.addEventListener("click", () => navLinks.classList.remove("open")));
+
+    document.querySelectorAll(".filter-btn").forEach(button => {
+      button.addEventListener("click", () => {
+        document.querySelectorAll(".filter-btn").forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+        const filter = button.dataset.filter;
+        document.querySelectorAll(".route-card").forEach(card => {
+          card.classList.toggle("hidden", filter !== "all" && card.dataset.duration !== filter);
+        });
+      });
+    });
+
+    document.getElementById("tripForm").addEventListener("submit", event => {
+      event.preventDefault();
+
+      const form = new FormData(event.currentTarget);
+      const name = (form.get("name") || "").trim();
+      const contact = (form.get("contactMethod") || "").trim();
+      const status = document.getElementById("formStatus");
+
+      if (!name || !contact) {
+        status.textContent = translations[currentLang].formError;
+        status.style.color = "var(--danger)";
+        return;
+      }
+
+      const subject = currentLang === "zh"
+        ? `南岛定制行程咨询｜${name}`
+        : `South Island Journey Enquiry | ${name}`;
+
+      const bodyZh =
+`您好 Aurora Australis，
+
+我想咨询新西兰南岛定制行程。
+
+姓名：${name}
+联系方式：${contact}
+预计出发时间：${form.get("travelDate") || "未确定"}
+旅行天数：${form.get("days") || "未确定"}
+出行人数：${form.get("people") || "未填写"}
+旅行方式：${form.get("travelStyle") || "未确定"}
+
+希望体验：
+${form.get("message") || "未填写"}
+
+谢谢！`;
+
+      const bodyEn =
+`Hello Aurora Australis,
+
+I would like to enquire about a tailor-made South Island journey.
+
+Name: ${name}
+Contact: ${contact}
+Expected travel date: ${form.get("travelDate") || "Not confirmed"}
+Trip length: ${form.get("days") || "Not confirmed"}
+Travelling party: ${form.get("people") || "Not provided"}
+Travel style: ${form.get("travelStyle") || "Not confirmed"}
+
+What I would like to experience:
+${form.get("message") || "Not provided"}
+
+Thank you.`;
+
+      const mailto = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(currentLang === "zh" ? bodyZh : bodyEn)}`;
+      status.textContent = translations[currentLang].formSuccess;
+      status.style.color = "var(--teal-dark)";
+      window.location.href = mailto;
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+    applyLanguage("zh");
+  </script>
+</body>
+</html>
